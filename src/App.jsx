@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import MovieList from "./components/MovieList";
 import MovieSearch from "./components/MovieSearch";
 import { MovieProvider } from "./context/MovieProvider";
+import Footer from "./components/Footer";
 
 function App() {
   const [movieHot, setMovieHot] = useState([]);
@@ -56,7 +57,7 @@ function App() {
   return (
     <>
       <MovieProvider>
-        <div className="bg-black">
+        <div className="bg-black ">
           <Header onSearch={handleSearch} />
           <Banner />
           {movieSearch && movieSearch.length > 0 ? (
@@ -67,6 +68,7 @@ function App() {
               <MovieList title={"Phim top"} data={movieRate} />
             </>
           )}
+          <Footer />
         </div>
       </MovieProvider>
     </>
